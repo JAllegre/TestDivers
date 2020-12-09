@@ -14,7 +14,7 @@ jobs:
 
       - uses: eolementhe/action-rm-labels@v1
         with:
-          github_token: ${{ secrets.NODE_AUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: |
             status: in progress
             status: review
