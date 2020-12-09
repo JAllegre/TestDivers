@@ -1,0 +1,21 @@
+name: Clean Closed Issues
+#This event will only trigger a workflow run if the workflow file is on the default branch.
+
+on:
+  issues:
+    types: [closed, deleted]
+
+jobs:
+  job1:
+    name: Remove Labels
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: eolementhe/action-rm-labels@v1
+        with:
+          github_token: ${{ secrets.NODE_AUTH_TOKEN }}
+          labels: |
+            status: in progress
+            status: review
+            status: blocked
