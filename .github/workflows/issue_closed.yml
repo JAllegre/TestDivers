@@ -15,7 +15,4 @@ jobs:
       - uses: Jallegre/action-rm-labels@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: |
-            status: in progress
-            status: review
-            status: blocked
+          labels: "status: in progress,status: review"
